@@ -7,8 +7,10 @@ LABEL dev.telitas.base.repository="https://hub.docker.com/_/centos"
 
 RUN yum upgrade -y
 
+# Install powershell
 RUN curl https://packages.microsoft.com/config/rhel/${os_version}/prod.repo | tee /etc/yum.repos.d/microsoft.repo
 RUN yum install -y powershell
+
 # Install powershell module
 SHELL ["pwsh", "-Command"]
 RUN Install-Package -Name Pester -Force
