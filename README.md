@@ -2,7 +2,7 @@
 
 Docker containers for testing PowerShell scripts.
 
-## Descriptionm
+## Description
 
 PowerShell(pwsh) and the following PowerShll modules are installed in each container.
 
