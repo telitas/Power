@@ -27,4 +27,6 @@ docker run --volume /host/path/to/testee:/mnt/testee --workdir /mnt/testee pwsh_
 
 ## License
 
-MIT
+CC0 1.0 Universal
+
+See the LICENSE file or https://creativecommons.org/publicdomain/zero/1.0/ for details.

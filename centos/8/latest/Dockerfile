@@ -1,3 +1,6 @@
+# This file is released under the CC0 1.0 Universal License.
+# See the LICENSE file or https://creativecommons.org/publicdomain/zero/1.0/ for details.
+
 ARG os_version="8"
 FROM centos:${os_version}
 ARG os_version
