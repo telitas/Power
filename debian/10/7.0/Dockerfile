@@ -4,7 +4,7 @@
 ARG os_version="10"
 FROM debian:${os_version}
 ARG os_version
-ARG pwsh_version="7.0.8-1.debian.${os_version}"
+ARG pwsh_version="7.0.11-1.debian.${os_version}"
 
 LABEL dev.telitas.project.repository="https://github.com/telitas/powershell-with-pester.docker"
 LABEL dev.telitas.base.repository="https://hub.docker.com/_/debian"
