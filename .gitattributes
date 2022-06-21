@@ -1,0 +1,4 @@
+*           text=auto eol=lf
+Dockerfile  text
+*.md        text
+*.txt       text
