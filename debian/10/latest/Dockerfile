@@ -8,19 +8,20 @@ ARG os_version
 LABEL dev.telitas.project.repository="https://github.com/telitas/powershell-with-pester.docker"
 LABEL dev.telitas.base.repository="https://hub.docker.com/_/debian"
 
-RUN apt update
-RUN apt upgrade
-
 # Install powershell
-RUN apt install -y wget
-RUN wget https://packages.microsoft.com/config/debian/${os_version}/packages-microsoft-prod.deb
-RUN dpkg --install packages-microsoft-prod.deb
-RUN apt update
-RUN apt install -y powershell
+RUN apt-get update && \
+    apt-get install -y wget && \
+    wget https://packages.microsoft.com/config/debian/${os_version}/packages-microsoft-prod.deb && \
+    dpkg --install packages-microsoft-prod.deb && \
+    apt-get update && \
+    apt-get install -y powershell && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install powershell module
 SHELL ["pwsh", "-Command"]
-RUN Install-Package -Name Pester -Force
-RUN Install-Package -Name PSScriptAnalyzer -Force
+RUN $ErrorActionPreference="Stop"; \
+    Install-Package -Name Pester -Force; \
+    Install-Package -Name PSScriptAnalyzer -Force
 
 ENTRYPOINT ["pwsh", "-Command"]
